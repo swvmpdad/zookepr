@@ -7,6 +7,7 @@ const {
 } = require("../lib/animals.js");
 const { animals } = require("../data/animals");
 
+jest.mock("fs");
 test("creates an animal object", () => {
   const animal = createNewAnimal(
     { name: "Darlene", id: "jhgdja3ng2" },
@@ -69,7 +70,7 @@ test("validates personality traits", () => {
     name: "Erica",
     species: "gorilla",
     diet: "omnivore",
-    personalityTraits: ["quirky", "rash"],
+    personalityTraits: ["quirky", "rash"]
   };
 
   const invalidAnimal = {
